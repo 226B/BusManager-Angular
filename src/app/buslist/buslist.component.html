@@ -1,0 +1,13 @@
+<h2>Bus Liste</h2>
+<table class="minimalistBlack">
+  <tr>
+    <th>Bus Name</th>
+    <th>Type</th>
+    <th>Kapazität</th>
+  </tr>
+  <tr *ngFor="let bus of buses">
+      <td>{{bus.name}}</td>
+      <td>{{bus.type.name}}</td>
+      <td>{{bus.type.capacity}}</td>
+  </tr>
+</table>

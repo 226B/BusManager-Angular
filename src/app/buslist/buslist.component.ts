@@ -12,9 +12,8 @@ export class BuslistComponent implements OnInit {
   buses;
 
   ngOnInit() {
-    this.apiService.getBuses().subscribe((data) => {
+    this.apiService.getBuses('some-station').subscribe((data) => {
       this.buses = data;
     });
   }
 }
-

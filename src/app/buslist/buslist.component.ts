@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ApiService} from '../api.service';
 import {Bus} from '../model/Bus';
 import {FormControl} from '@angular/forms';
+import {MatTable} from '@angular/material';
 
 @Component({
   selector: 'app-bus-list',
@@ -17,6 +18,8 @@ export class BuslistComponent implements OnInit {
   error = '';
   name = new FormControl('');
   typename = new FormControl('');
+  @ViewChild('busTable') dataTable: MatTable<any>;
+  displayedColumns: string[] = ['name', 'type', 'capacity'];
 
   constructor(private apiService: ApiService) {
   }
@@ -30,9 +33,10 @@ export class BuslistComponent implements OnInit {
   saveEntry() {
     this.apiService.setBus(this.station, this.currentBus).subscribe(value => {
       this.name.setValue('');
-      this.typename.setValue('');
+      this.typename.setValue('-');
       this.buses.push(this.currentBus);
       this.currentBus = new Bus();
+      this.dataTable.renderRows();
       this.error = 'Bus erfoglreich gespeichert';
     }, error => {
       console.log(error);

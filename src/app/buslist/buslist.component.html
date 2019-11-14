@@ -12,4 +12,18 @@
   </tr>
 </table>
 
+<form name="buslistForm" novalidate (ngSubmit)="saveEntry()" #buslistForm="ngForm">
+  <p>
+    <label for="title">Name:</label>
+    <input [formControl]="name" id="title" type="text" name="title" [(ngModel)]="currentBus.name"/>
+  </p>
+  <p>
+    <label for="content">Typename:</label>
+    <input [formControl]="typename" id="content" type="text" name="content" [(ngModel)]="currentBus.type.name" required/>
+  </p>
+  <button type="submit" name="submit" [disabled]="!buslistForm.valid">Speichern</button>
+</form>
+<p>
+  {{error}}
+</p>
 

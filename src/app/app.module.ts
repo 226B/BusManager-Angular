@@ -5,13 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BuslistComponent } from './buslist/buslist.component';
-import { CreateBusComponent } from './create-bus/create-bus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuslistComponent,
-    CreateBusComponent
+    BuslistComponent
   ],
   imports: [
     HttpClientModule,

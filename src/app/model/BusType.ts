@@ -1,11 +1,12 @@
 export class BusType {
-  constructor(name: string, capacity: number, recoveryTime: number, maxRange: number, distancePer100: number) {
-    this.name = name;
-    this.capacity = capacity;
-    this.recoveryTime = recoveryTime;
-    this.maxRange = maxRange;
-    this.distancePer100 = distancePer100;
+  constructor() {
+    this.name = '';
+    this.capacity = null;
+    this.recoveryTime = null;
+    this.maxRange = null;
+    this.distancePer100 = null;
   }
+
   name: string;
   capacity: number;
   recoveryTime: number;

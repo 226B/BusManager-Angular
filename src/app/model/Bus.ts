@@ -1,9 +1,8 @@
 import {BusType} from './BusType';
 
 export class Bus {
-  constructor(name: string, type: BusType) {
-    this.name = name;
-    this.type = type;
+  constructor() {
+    this.type = new BusType();
   }
 
   name: string;

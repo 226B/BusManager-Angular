@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ApiService} from '../api.service';
+import {Bus} from '../model/Bus';
+import {Data} from '../model/Data';
 
 @Component({
   selector: 'app-bus-list',
   templateUrl: './buslist.component.html',
   styleUrls: ['./buslist.component.css']
 })
-export class BuslistComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+
+export class BuslistComponent implements OnInit {
+  station = 'Bern';
   buses;
+  constructor(private apiService: ApiService) {
+  }
 
   ngOnInit() {
-    this.apiService.getBuses('some-station').subscribe((data) => {
+    this.apiService.getBuses(this.station).subscribe((data) => {
       this.buses = data;
+      Data.setBuses(this.buses);
     });
   }
 }

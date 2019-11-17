@@ -21,7 +21,7 @@ import {MatButtonModule, MatTableModule, MatInputModule} from '@angular/material
     BrowserAnimationsModule,
     MatTableModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

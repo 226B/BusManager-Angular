@@ -37,7 +37,7 @@ export class BuslistComponent implements OnInit {
       this.buses.push(this.currentBus);
       this.currentBus = new Bus();
       this.dataTable.renderRows();
-      this.error = 'Bus erfoglreich gespeichert';
+      this.error = 'Bus erfolgreich gespeichert';
     }, error => {
       console.log(error);
       this.error = error.error.message;

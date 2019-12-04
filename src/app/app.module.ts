@@ -11,6 +11,9 @@ import { BaseContentOverviewComponent } from './base-content-overview/base-conte
 import { BustypeOverviewComponent } from './bustype-overview/bustype-overview.component';
 import { BustypeListComponent } from './bustype-list/bustype-list.component';
 import { BustypeFormComponent } from './bustype-form/bustype-form.component';
+import {MatCardModule} from '@angular/material';
+import { BusDetailComponent } from './bus-detail/bus-detail.component';
+import { BustypeDetailComponent } from './bustype-detail/bustype-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,15 @@ import { BustypeFormComponent } from './bustype-form/bustype-form.component';
     BaseContentOverviewComponent,
     BustypeOverviewComponent,
     BustypeListComponent,
-    BustypeFormComponent
+    BustypeFormComponent,
+    BusDetailComponent,
+    BustypeDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

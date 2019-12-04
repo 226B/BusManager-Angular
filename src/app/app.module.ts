@@ -11,9 +11,10 @@ import { BaseContentOverviewComponent } from './base-content-overview/base-conte
 import { BustypeOverviewComponent } from './bustype-overview/bustype-overview.component';
 import { BustypeListComponent } from './bustype-list/bustype-list.component';
 import { BustypeFormComponent } from './bustype-form/bustype-form.component';
-import {MatCardModule} from '@angular/material';
+import {MatCardModule, MatTableModule} from '@angular/material';
 import { BusDetailComponent } from './bus-detail/bus-detail.component';
 import { BustypeDetailComponent } from './bustype-detail/bustype-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { BustypeDetailComponent } from './bustype-detail/bustype-detail.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

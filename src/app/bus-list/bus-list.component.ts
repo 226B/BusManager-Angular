@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BusService} from '../bus.service';
+import {Bus} from '../model/bus';
 
 @Component({
   selector: 'bm-bus-list',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bus-list.component.css']
 })
 export class BusListComponent implements OnInit {
+  private data: Bus[];
+  displayedColumns: string[] = ['name', 'type'];
 
-  constructor() { }
+  constructor(private busService: BusService) { }
 
   ngOnInit() {
+    this.busService.getBuses().subscribe(value => {
+      this.data = value;
+    });
   }
-
 }

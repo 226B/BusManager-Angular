@@ -1,3 +1,35 @@
-<p>
-  bustype-list works!
-</p>
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Capacity Column -->
+  <ng-container matColumnDef="capacity">
+    <th mat-header-cell *matHeaderCellDef> Kapazität </th>
+    <td mat-cell *matCellDef="let element"> {{element.capacity}} </td>
+  </ng-container>
+
+  <!-- recoveryTime Column -->
+  <ng-container matColumnDef="recoveryTime">
+    <th mat-header-cell *matHeaderCellDef> Erholungszeit </th>
+    <td mat-cell *matCellDef="let element"> {{element.recoveryTime}} </td>
+  </ng-container>
+
+  <!-- maxRange Column -->
+  <ng-container matColumnDef="maxRange">
+    <th mat-header-cell *matHeaderCellDef> Reichweite </th>
+    <td mat-cell *matCellDef="let element"> {{element.maxRange}} </td>
+  </ng-container>
+
+
+  <!-- distancePerH Column -->
+  <ng-container matColumnDef="distancePerH">
+    <th mat-header-cell *matHeaderCellDef> Geschwindigkeit </th>
+    <td mat-cell *matCellDef="let element"> {{element.distancePerH}} km/h </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

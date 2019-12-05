@@ -15,6 +15,11 @@ import {MatCardModule, MatTableModule} from '@angular/material';
 import { BusDetailComponent } from './bus-detail/bus-detail.component';
 import { BustypeDetailComponent } from './bustype-detail/bustype-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavigationComponent } from './navigation/navigation.component';
+import { TimetableComponent } from './timetable/timetable.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     BustypeListComponent,
     BustypeFormComponent,
     BusDetailComponent,
-    BustypeDetailComponent
+    BustypeDetailComponent,
+    NavigationComponent,
+    TimetableComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatCardModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

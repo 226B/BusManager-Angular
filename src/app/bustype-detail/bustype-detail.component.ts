@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {BusType} from '../model/bus';
 
 @Component({
   selector: 'bm-bustype-detail',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bustype-detail.component.css']
 })
 export class BustypeDetailComponent implements OnInit {
+  @Input() private busType: BusType;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
-
 }

@@ -1,19 +1,27 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {BaseContentOverviewComponent} from './base-content-overview/base-content-overview.component';
+import {BustypeFormComponent} from './bustype-form/bustype-form.component';
+import {BusFormComponent} from './bus-form/bus-form.component';
+import {BusDetailComponent} from './bus-detail/bus-detail.component';
+import {BustypeDetailComponent} from './bustype-detail/bustype-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'base',      component: BaseContentOverviewComponent },
-  { path: '404',      component: NotFoundComponent },
-  { path: '**', redirectTo: '404', pathMatch: 'full' }
-  ];
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
+  {path: 'base', component: BaseContentOverviewComponent},
+  {path: 'base/add/bustype', component: BustypeFormComponent},
+  {path: 'base/add/bus', component: BusFormComponent},
+  {path: 'base/bus/:name', component: BusDetailComponent},
+  {path: 'base/bustype/:name', component: BustypeDetailComponent},
+  {path: '**', component: NotFoundComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

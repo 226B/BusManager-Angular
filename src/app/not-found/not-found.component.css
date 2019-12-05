@@ -1,8 +1,6 @@
 mat-card {
   height: 100%;
   width: 100%;
-  margin: 20px;
-  border-bottom-color: #111111;
 }
 .center {
   margin: auto;

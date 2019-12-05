@@ -1,3 +1,9 @@
-<p>
-  bustype-detail works!
-</p>
+<mat-card>
+  <h2>{{busType.name}}</h2>
+  <mat-divider></mat-divider>
+  <br>
+  <p> Kapazität: {{busType.capacity}} </p>
+  <p> Erholungszeit: {{busType.recoveryTime}} </p>
+  <p> Reichweite: {{busType.maxRange}} </p>
+  <p> Geschwindigkeit: {{busType.distancePerH}} </p>
+</mat-card>

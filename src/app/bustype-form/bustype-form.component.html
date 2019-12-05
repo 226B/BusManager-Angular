@@ -1,3 +1,51 @@
-<p>
-  bustype-form works!
-</p>
+<mat-card>
+  <form name="form" novalidate (ngSubmit)="saveEntry()" #form="ngForm">
+    <h2>BusType erstellen</h2>
+    <mat-form-field>
+      <input id="name" matInput placeholder="Name" [formControl]="name" required>
+      <mat-error *ngIf="name.invalid  && (name.dirty || name.touched)">
+        {{getTextError(name)}}
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="capacity" matInput placeholder="Kapazität" [formControl]="capacity" required min="0" type="number">
+      <mat-error *ngIf="capacity.invalid && (capacity.dirty || capacity.touched)">
+        {{getNumberError(capacity)}}
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="recoveryTime" matInput placeholder="Erholungszeit" [formControl]="recoveryTime" required min="0"
+             type="number">
+      <mat-error *ngIf="recoveryTime.invalid && (recoveryTime.dirty || recoveryTime.touched)">
+        {{getNumberError(recoveryTime)}}
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="maxRange" matInput placeholder="Reichweite" [formControl]="maxRange" required min="0" type="number">
+      <mat-error *ngIf="maxRange.invalid && (maxRange.dirty || maxRange.touched)">
+        {{getNumberError(maxRange)}}
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input id="distancePerH" matInput placeholder="Geschwindigkeit" [formControl]="group.contains(distancePerH)" required min="0"
+             type="number">
+      <mat-error *ngIf="distancePerH.invalid && (distancePerH.dirty || distancePerH.touched)">
+        {{getNumberError(distancePerH)}}
+      </mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="error">
+      {{message}}
+    </mat-error>
+    <p *ngIf="!error">
+      {{message}}
+    </p>
+    <br>
+    <button mat-button type="submit" name="submit" [disabled]="!isValid()">Speichern</button>
+  </form>
+</mat-card>
+
+

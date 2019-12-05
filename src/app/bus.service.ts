@@ -26,4 +26,8 @@ export class BusService {
   public getBusType(name: string): Observable<BusType> {
     return this.httpClient.get<BusType>('http://localhost:8080/api/v1/bus/type/get/' + encodeURIComponent(name));
   }
+
+  public addType(type: BusType): Observable<BusType> {
+    return this.httpClient.post<BusType>('http://localhost:8080/api/v1/bus/type/add?override=false', type);
+  }
 }

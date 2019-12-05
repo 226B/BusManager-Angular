@@ -11,7 +11,7 @@ import {BaseContentOverviewComponent} from './base-content-overview/base-content
 import {BustypeOverviewComponent} from './bustype-overview/bustype-overview.component';
 import {BustypeListComponent} from './bustype-list/bustype-list.component';
 import {BustypeFormComponent} from './bustype-form/bustype-form.component';
-import {MatCardModule, MatTableModule} from '@angular/material';
+import {MatCardModule, MatFormFieldModule, MatInputModule, MatTableModule} from '@angular/material';
 import {BusDetailComponent} from './bus-detail/bus-detail.component';
 import {BustypeDetailComponent} from './bustype-detail/bustype-detail.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -23,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormButtonComponent } from './form-button/form-button.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSortModule} from '@angular/material/sort';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,11 @@ import {MatSortModule} from '@angular/material/sort';
     HttpClientModule,
     MatButtonModule,
     MatDividerModule,
-    MatSortModule
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

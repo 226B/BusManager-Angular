@@ -46,6 +46,5 @@ export class BustypeFormComponent implements OnInit {
       this.error = true;
       this.message = error.error.message;
     });
-    return;
   }
 }

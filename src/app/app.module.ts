@@ -24,6 +24,7 @@ import { FormButtonComponent } from './form-button/form-button.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSortModule} from '@angular/material/sort';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PageCardComponent } from './page-card/page-card.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     TimetableComponent,
     HomeComponent,
     NotFoundComponent,
-    FormButtonComponent
+    FormButtonComponent,
+    PageCardComponent
   ],
   imports: [
     BrowserModule,

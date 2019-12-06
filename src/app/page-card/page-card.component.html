@@ -1,14 +1,13 @@
-<mat-card>
-  <h2>
-    {{title}}
-  </h2>
-  <p>
-    {{description}}
-  </p>
-  <br>
-  <a [routerLink]="url" routerLinkActive="active">
-    <button mat-button>
-      Öffnen
-    </button>
-  </a>
-</mat-card>
+<a [routerLink]="url" routerLinkActive="active">
+  <button mat-button>
+    <mat-card>
+      <h2>
+        {{title}}
+      </h2>
+      <p>
+        {{description}}
+      </p>
+      <br>
+    </mat-card>
+  </button>
+</a>

@@ -20,7 +20,6 @@ import {TimetableComponent} from './timetable/timetable.component';
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {MatButtonModule} from '@angular/material/button';
-import { FormButtonComponent } from './form-button/form-button.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSortModule} from '@angular/material/sort';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -43,7 +42,6 @@ import {MatSelectModule} from '@angular/material/select';
     TimetableComponent,
     HomeComponent,
     NotFoundComponent,
-    FormButtonComponent,
     PageCardComponent
   ],
   imports: [

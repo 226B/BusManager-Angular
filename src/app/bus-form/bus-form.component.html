@@ -1,6 +1,6 @@
 <mat-card>
   <form [formGroup]="group" name="form" novalidate (ngSubmit)="saveEntry(f)" #f="ngForm">
-
+    <h2>Bus erstellen</h2>
     <mat-form-field>
       <input id="name" matInput placeholder="Name" formControlName="name" required [(ngModel)]="bus.name">
       <mat-error *ngIf="group.controls.name.invalid  && (group.controls.name.dirty || group.controls.name.touched)">
@@ -27,7 +27,6 @@
     <p *ngIf="!error">
       {{message}}
     </p>
-    <br>
     <button mat-button type="submit" name="submit" [disabled]="!group.valid">Speichern</button>
   </form>
 </mat-card>

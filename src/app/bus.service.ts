@@ -30,4 +30,8 @@ export class BusService {
   public addType(type: BusType): Observable<BusType> {
     return this.httpClient.post<BusType>('http://localhost:8080/api/v1/bus/type/add?override=false', type);
   }
+
+  public addBus(bus: Bus): Observable<Bus> {
+    return this.httpClient.post<Bus>('http://localhost:8080/api/v1/bus/add?override=false', bus);
+  }
 }

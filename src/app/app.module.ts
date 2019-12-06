@@ -25,6 +25,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSortModule} from '@angular/material/sort';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PageCardComponent } from './page-card/page-card.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { PageCardComponent } from './page-card/page-card.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,33 @@
-<p>
-  bus-form works!
-</p>
+<mat-card>
+  <form [formGroup]="group" name="form" novalidate (ngSubmit)="saveEntry(f)" #f="ngForm">
+
+    <mat-form-field>
+      <input id="name" matInput placeholder="Name" formControlName="name" required [(ngModel)]="bus.name">
+      <mat-error *ngIf="group.controls.name.invalid  && (group.controls.name.dirty || group.controls.name.touched)">
+        {{getTextError(group.controls.name)}}
+      </mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+      <mat-label>BusType</mat-label>
+      <mat-select formControlName="type" required [(ngModel)]="bus.type.name">
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let type of typeNames" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="group.controls.type.invalid && (group.controls.type.dirty || group.controls.type.touched)">
+        {{getTextError(group.controls.type)}}
+      </mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="error">
+      {{message}}
+    </mat-error>
+    <p *ngIf="!error">
+      {{message}}
+    </p>
+    <br>
+    <button mat-button type="submit" name="submit" [disabled]="!group.valid">Speichern</button>
+  </form>
+</mat-card>

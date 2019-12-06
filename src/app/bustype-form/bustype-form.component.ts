@@ -25,7 +25,7 @@ export class BustypeFormComponent implements OnInit {
   }
   getNumberError(form: AbstractControl) {
     return form.hasError('required') ? 'Bitte geben sie einen Wert ein.' :
-      form.hasError('min') ? 'Die Zahl muss grösser sein als 0.' :
+      form.hasError('min') ? 'Die Zahl muss grösser als 0 sein.' :
         '';
   }
 

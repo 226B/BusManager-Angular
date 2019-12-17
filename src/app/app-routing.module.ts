@@ -16,8 +16,6 @@ const routes: Routes = [
   {path: 'base', component: BaseContentOverviewComponent},
   {path: 'base/bus', component: BusOverviewComponent},
   {path: 'base/bustype', component: BustypeOverviewComponent},
-  {path: 'base/add/bustype', component: BustypeFormComponent},
-  {path: 'base/add/bus', component: BusFormComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

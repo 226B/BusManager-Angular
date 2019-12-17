@@ -1,5 +1,10 @@
 <h1>Bus Übersicht</h1>
-<bm-page-card title="Bus erstellen" url="/base/add/bus"></bm-page-card>
+<mat-card>
+  <button (click)="openDialog()" mat-button>
+      <h2>Bus erstellen</h2>
+  </button>
+</mat-card>
+
 <mat-card>
   <bm-bus-list>Bus liste lädt...</bm-bus-list>
 </mat-card>

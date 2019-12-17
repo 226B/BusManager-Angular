@@ -28,5 +28,6 @@
       {{message}}
     </p>
     <button mat-button type="submit" name="submit" [disabled]="!group.valid">Speichern</button>
+    <button mat-button (click)="this.dialog.closeAll()">Schliessen</button>
   </form>
 </mat-card>

@@ -29,6 +29,10 @@ export class BusListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.reload();
+  }
+
+  reload() {
     this.busService.getBuses().subscribe(value => {
       this.dataSource = new MatTableDataSource(value);
 

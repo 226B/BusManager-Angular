@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {BusService} from '../bus.service';
 import {Bus} from '../model/bus';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'bm-bus-form',
@@ -9,6 +10,7 @@ import {Bus} from '../model/bus';
   styleUrls: ['./bus-form.component.css']
 })
 export class BusFormComponent implements OnInit {
+  emit: boolean;
   error = false;
   message = '';
   bus = new Bus();
@@ -21,7 +23,9 @@ export class BusFormComponent implements OnInit {
   getTextError(form: AbstractControl) {
     return form.hasError('required') ? 'Bitte wählen sie einen Wert aus.' : '';
   }
-  constructor(private service: BusService) { }
+  constructor(private service: BusService,  private dialog: MatDialog) {
+    this.emit = false;
+  }
 
   ngOnInit() {
     this.service.getBusTypes().subscribe(value => {
@@ -40,6 +44,7 @@ export class BusFormComponent implements OnInit {
       this.group.reset();
       this.error = false;
       this.message = 'Bus erfolgreich gespeichert.';
+      this.emit = true;
     }, error1 => {
       this.error = true;
       this.message = error1.error.message;

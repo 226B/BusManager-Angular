@@ -25,10 +25,13 @@ export class BustypeListComponent implements OnInit {
   constructor(private busService: BusService) { }
 
   ngOnInit() {
+    this.reload();
+  }
+
+  reload() {
     this.busService.getBusTypes().subscribe(value => {
       this.dataSource = new MatTableDataSource(value);
       this.dataSource.sort = this.sort;
     });
   }
-
 }

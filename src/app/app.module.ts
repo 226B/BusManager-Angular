@@ -15,7 +15,6 @@ import {MatCardModule, MatFormFieldModule, MatInputModule, MatTableModule} from 
 import {BusDetailComponent} from './bus-detail/bus-detail.component';
 import {BustypeDetailComponent} from './bustype-detail/bustype-detail.component';
 import {HttpClientModule} from '@angular/common/http';
-import {NavigationComponent} from './navigation/navigation.component';
 import {TimetableComponent} from './timetable/timetable.component';
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
@@ -27,6 +26,7 @@ import { PageCardComponent } from './page-card/page-card.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BustypeFormComponent,
     BusDetailComponent,
     BustypeDetailComponent,
-    NavigationComponent,
     TimetableComponent,
     HomeComponent,
     NotFoundComponent,
@@ -62,9 +61,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     FormsModule,
     MatSelectModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [MatDialogConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule {

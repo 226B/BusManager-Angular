@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {Bus, BusType} from '../model/bus';
 import {BusService} from '../bus.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'bm-bustype-form',
@@ -29,7 +30,7 @@ export class BustypeFormComponent implements OnInit {
         '';
   }
 
-  constructor(private service: BusService) {
+  constructor(private service: BusService, private dialog: MatDialog) {
   }
 
   ngOnInit() {

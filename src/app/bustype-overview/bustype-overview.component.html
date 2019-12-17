@@ -1,5 +1,12 @@
 <h1>BusType Übersicht</h1>
-<bm-page-card title="Bus Type erstellen" url="/base/add/bustype"></bm-page-card>
+
 <mat-card>
+  <button (click)="openDialog()" mat-button>
+      <h2>BusType erstellen</h2>
+  </button>
+</mat-card>
+
+<mat-card>
+
   <bm-bustype-list>BusType liste lädt...</bm-bustype-list>
 </mat-card>

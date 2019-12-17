@@ -6,7 +6,7 @@ import {BusListComponent} from '../bus-list/bus-list.component';
 @Component({
   selector: 'bm-bus-overview',
   templateUrl: './bus-overview.component.html',
-  styleUrls: ['./bus-overview.component.css', './../styles/overview.css']
+  styleUrls: ['./bus-overview.component.css', '../../../_styles/overview.css']
 })
 export class BusOverviewComponent implements OnInit {
   constructor(private dialog: MatDialog) { }

@@ -1,13 +1,13 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {BusFormComponent} from '../bus-form/bus-form.component';
+import {BusFormComponent} from '../../bus/bus-form/bus-form.component';
 import {BustypeListComponent} from '../bustype-list/bustype-list.component';
 import {BustypeFormComponent} from '../bustype-form/bustype-form.component';
 
 @Component({
   selector: 'bm-bustype-overview',
   templateUrl: './bustype-overview.component.html',
-  styleUrls: ['./bustype-overview.component.css', './../styles/overview.css']
+  styleUrls: ['./bustype-overview.component.css', '../../../_styles/overview.css']
 })
 export class BustypeOverviewComponent implements OnInit {
 

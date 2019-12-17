@@ -3,12 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {BaseContentOverviewComponent} from './base-content-overview/base-content-overview.component';
-import {BustypeFormComponent} from './bustype-form/bustype-form.component';
-import {BusFormComponent} from './bus-form/bus-form.component';
-import {BusDetailComponent} from './bus-detail/bus-detail.component';
-import {BustypeDetailComponent} from './bustype-detail/bustype-detail.component';
-import {BusOverviewComponent} from './bus-overview/bus-overview.component';
-import {BustypeOverviewComponent} from './bustype-overview/bustype-overview.component';
+import {BusOverviewComponent} from './bus/bus-overview/bus-overview.component';
+import {BustypeOverviewComponent} from './bustype/bustype-overview/bustype-overview.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},

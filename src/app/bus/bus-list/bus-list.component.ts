@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {BusService} from '../bus.service';
-import {Bus} from '../model/bus';
+import {BusService} from '../../bus.service';
+import {Bus} from '../../../_model/bus';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -8,7 +8,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'bm-bus-list',
   templateUrl: './bus-list.component.html',
-  styleUrls: ['./bus-list.component.css', './../styles/expandable-table-style.css'],
+  styleUrls: ['./bus-list.component.css', '../../../_styles/expandable-table-style.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed, void', style({ height: '0px', minHeight: '0', display: 'none' })),

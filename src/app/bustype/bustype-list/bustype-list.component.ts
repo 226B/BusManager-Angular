@@ -1,13 +1,13 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Bus, BusType} from '../model/bus';
-import {BusService} from '../bus.service';
+import {Bus, BusType} from '../../../_model/bus';
+import {BusService} from '../../bus.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'bm-bustype-list',
   templateUrl: './bustype-list.component.html',
-  styleUrls: ['./bustype-list.component.css', './../styles/expandable-table-style.css'],
+  styleUrls: ['./bustype-list.component.css', '../../../_styles/expandable-table-style.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed, void', style({ height: '0px', minHeight: '0', display: 'none' })),

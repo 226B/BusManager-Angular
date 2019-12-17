@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BusType} from '../model/bus';
+import {BusType} from '../../../_model/bus';
 
 @Component({
   selector: 'bm-bustype-detail',

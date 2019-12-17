@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
-import {BusService} from '../../bus.service';
+import {BusService} from '../../../_services/bus.service';
 import {Bus} from '../../../_model/bus';
 import {MatDialog} from '@angular/material/dialog';
 

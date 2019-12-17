@@ -5,7 +5,7 @@
         <mat-toolbar-row>
           <div class="example-sidenav-content">
             <button type="button" mat-button (click)="drawer.toggle()">
-              Toggle sidenav
+              Navigation
             </button>
           </div>
         </mat-toolbar-row>
@@ -19,9 +19,9 @@
     </nav>
   </mat-drawer>
 
-  <div class="example-sidenav-content" *ngIf="!drawer.opened">
+  <div class="sidenav-button" *ngIf="!drawer.opened">
     <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
+      Navigation
     </button>
   </div>
   <router-outlet></router-outlet>

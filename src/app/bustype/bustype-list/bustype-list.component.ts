@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Bus, BusType} from '../../../_model/bus';
-import {BusService} from '../../bus.service';
+import {BusType} from '../../../_model/bus';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSort, MatTableDataSource} from '@angular/material';
+import {BusService} from '../../../_services/bus.service';
 
 @Component({
   selector: 'bm-bustype-list',

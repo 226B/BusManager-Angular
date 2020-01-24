@@ -27,6 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
+import { TripOverviewComponent } from './trip/trip-overview/trip-overview.component';
+import { TripFormComponent } from './trip/trip-form/trip-form.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
     TimetableComponent,
     HomeComponent,
     NotFoundComponent,
-    PageCardComponent
+    PageCardComponent,
+    TripOverviewComponent,
+    TripFormComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,7 @@ import {MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
   ],
   providers: [MatDialogConfig],
   bootstrap: [AppComponent],
-  entryComponents: [BusFormComponent, BustypeFormComponent]
+  entryComponents: [BusFormComponent, BustypeFormComponent, TripFormComponent]
 })
 export class AppModule {
 }

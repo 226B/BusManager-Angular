@@ -5,6 +5,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {BaseContentOverviewComponent} from './base-content-overview/base-content-overview.component';
 import {BusOverviewComponent} from './bus/bus-overview/bus-overview.component';
 import {BustypeOverviewComponent} from './bustype/bustype-overview/bustype-overview.component';
+import {TripOverviewComponent} from './trip/trip-overview/trip-overview.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'base', component: BaseContentOverviewComponent},
   {path: 'base/bus', component: BusOverviewComponent},
   {path: 'base/bustype', component: BustypeOverviewComponent},
+  {path: 'base/trip', component: TripOverviewComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

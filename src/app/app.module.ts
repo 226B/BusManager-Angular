@@ -29,6 +29,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
 import { TripOverviewComponent } from './trip/trip-overview/trip-overview.component';
 import { TripFormComponent } from './trip/trip-form/trip-form.component';
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+
+
 
 @NgModule({
   declarations: [
@@ -66,7 +70,12 @@ import { TripFormComponent } from './trip/trip-form/trip-form.component';
     MatSelectModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    BrowserModule,
+    DlDateTimeDateModule,
+    DlDateTimePickerModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
   ],
   providers: [MatDialogConfig],
   bootstrap: [AppComponent],

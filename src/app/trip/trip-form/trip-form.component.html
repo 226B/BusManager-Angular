@@ -1,3 +1,46 @@
 <mat-card>
-  <h1>Trip erstellen</h1>
+  <div *ngIf="loaded">
+    <form [formGroup]="group" name="form" novalidate (ngSubmit)="saveEntry(f)" #f="ngForm">
+      <h2>Trip erstellen</h2>
+
+      <mat-form-field>
+        <mat-label>Start</mat-label>
+        <mat-select formControlName="start" [(value)]="tripDto.startStation">
+          <mat-option *ngFor="let start of info.stations" [value]="start">
+            {{start}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Ende</mat-label>
+        <mat-select formControlName="end" [(value)]="tripDto.endStation">
+          <mat-option *ngFor="let end of info.stations" [value]="end">
+            {{end}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Kapazität</mat-label>
+        <mat-select formControlName="capacity" [(value)]="tripDto.capacity">
+          <mat-option *ngFor="let cap of info.capacities" [value]="cap">
+            {{cap}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-label>
+        Abfahrtszeit:<br>
+        <input formControlName="time" [(ngModel)]="tripDto.time" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+        <owl-date-time #dt></owl-date-time>
+      </mat-label>
+      <br>
+
+      <button mat-button type="submit" name="submit" [disabled]="!group.valid || !isValid()">Speichern</button>
+      <button mat-button (click)="this.dialog.closeAll()">Schliessen</button>
+    </form>
+  </div>
 </mat-card>

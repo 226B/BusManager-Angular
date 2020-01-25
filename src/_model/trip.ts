@@ -7,3 +7,14 @@ export class Trip {
   arrivalTerminal: string;
   busType: string;
 }
+export class CreateTripDto {
+  startStation: string;
+  endStation: string;
+  capacity: number;
+  time: Date;
+}
+
+export class TripInfo {
+  capacities: number[];
+  stations: string[];
+}

@@ -5,6 +5,7 @@ export class Bus {
 
   name: string;
   type: BusType;
+  station: string;
 }
 
 export class BusType {
@@ -21,4 +22,8 @@ export class BusType {
   recoveryTime: number;
   maxRange: number;
   distancePerH: number;
+}
+
+export class Stations {
+  stations: string[];
 }

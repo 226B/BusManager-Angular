@@ -21,6 +21,20 @@
         {{getTextError(group.controls.type)}}
       </mat-error>
     </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Stationen</mat-label>
+      <mat-select formControlName="station" required [(ngModel)]="bus.station">
+        <mat-option *ngFor="let type of stations" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="group.controls.station.invalid  && (group.controls.station.dirty || group.controls.station.touched)">
+        {{getTextError(group.controls.station)}}
+      </mat-error>
+    </mat-form-field>
+
     <mat-error *ngIf="error">
       {{message}}
     </mat-error>

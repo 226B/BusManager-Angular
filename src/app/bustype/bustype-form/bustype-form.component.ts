@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
-import {Bus, BusType} from '../../../_model/bus';
+import {BusType} from '../../../_model/bus';
 import {BusService} from '../../../_services/bus.service';
 import {MatDialog} from '@angular/material/dialog';
 

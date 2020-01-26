@@ -13,12 +13,15 @@ export class BusFormComponent implements OnInit {
   emit: boolean;
   error = false;
   message = '';
+  ready = false;
   bus = new Bus();
   group = new FormGroup({
     name: new FormControl(''),
-    type: new FormControl('')
+    type: new FormControl(''),
+    station: new FormControl('')
   }, Validators.required);
   typeNames = [];
+  stations: string[];
 
   getTextError(form: AbstractControl) {
     return form.hasError('required') ? 'Bitte wählen sie einen Wert aus.' : '';
@@ -35,6 +38,10 @@ export class BusFormComponent implements OnInit {
     }, error => {
       this.error = true;
       this.message = error.error.message;
+    });
+    this.service.getInfo().subscribe(value => {
+      this.stations = value.stations;
+      this.ready = true;
     });
   }
 

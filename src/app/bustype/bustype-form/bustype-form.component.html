@@ -1,16 +1,16 @@
 <mat-card>
-  <form [formGroup]="group" name="form" novalidate (ngSubmit)="saveEntry(f)" #f="ngForm">
+  <form #f="ngForm" (ngSubmit)="saveEntry(f)" [formGroup]="group" name="form" novalidate>
     <h2>BusType erstellen</h2>
     <mat-form-field>
-      <input id="name" matInput placeholder="Name" formControlName="name" required [(ngModel)]="busType.name">
+      <input [(ngModel)]="busType.name" formControlName="name" id="name" matInput placeholder="Name" required>
       <mat-error *ngIf="group.controls.name.invalid  && (group.controls.name.dirty || group.controls.name.touched)">
         {{getTextError(group.controls.name)}}
       </mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input id="capacity" matInput placeholder="Kapazität" formControlName="capacity" required min="0" type="number"
-             [(ngModel)]="busType.capacity">
+      <input [(ngModel)]="busType.capacity" formControlName="capacity" id="capacity" matInput min="0" placeholder="Kapazität" required
+             type="number">
       <mat-error
         *ngIf="group.controls.capacity.invalid && (group.controls.capacity.dirty || group.controls.capacity.touched)">
         {{getNumberError(group.controls.capacity)}}
@@ -18,8 +18,8 @@
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input id="recoveryTime" matInput placeholder="Erholungszeit" formControlName="recoveryTime" required min="0"
-             type="number" [(ngModel)]="busType.recoveryTime">
+      <input [(ngModel)]="busType.recoveryTime" formControlName="recoveryTime" id="recoveryTime" matInput min="0" placeholder="Erholungszeit"
+             required type="number">
       <mat-error
         *ngIf="group.controls.recoveryTime.invalid && (group.controls.recoveryTime.dirty || group.controls.recoveryTime.touched)">
         {{getNumberError(group.controls.recoveryTime)}}
@@ -27,8 +27,8 @@
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input id="maxRange" matInput placeholder="Reichweite" formControlName="maxRange" required min="0" type="number"
-             [(ngModel)]="busType.maxRange">
+      <input [(ngModel)]="busType.maxRange" formControlName="maxRange" id="maxRange" matInput min="0" placeholder="Reichweite" required
+             type="number">
       <mat-error
         *ngIf="group.controls.maxRange.invalid && (group.controls.maxRange.dirty || group.controls.maxRange.touched)">
         {{getNumberError(group.controls.maxRange)}}
@@ -36,8 +36,8 @@
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input id="distancePerH" matInput placeholder="Geschwindigkeit" formControlName="distancePerH" required min="0"
-             type="number" [(ngModel)]="busType.distancePerH">
+      <input [(ngModel)]="busType.distancePerH" formControlName="distancePerH" id="distancePerH" matInput min="0" placeholder="Geschwindigkeit"
+             required type="number">
       <mat-error
         *ngIf="group.controls.distancePerH.invalid && (group.controls.distancePerH.dirty || group.controls.distancePerH.touched)">
         {{getNumberError(group.controls.distancePerH)}}
@@ -49,7 +49,7 @@
     <p *ngIf="!error">
       {{message}}
     </p>
-    <button mat-button type="submit" name="submit" [disabled]="!group.valid">Speichern</button>
-    <button mat-button (click)="this.dialog.closeAll()">Schliessen</button>
+    <button [disabled]="!group.valid" mat-button name="submit" type="submit">Speichern</button>
+    <button (click)="this.dialog.closeAll()" mat-button>Schliessen</button>
   </form>
 </mat-card>

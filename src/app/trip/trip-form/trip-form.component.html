@@ -1,11 +1,11 @@
 <mat-card>
   <div *ngIf="loaded">
-    <form [formGroup]="group" name="form" novalidate (ngSubmit)="saveEntry(f)" #f="ngForm">
+    <form #f="ngForm" (ngSubmit)="saveEntry(f)" [formGroup]="group" name="form" novalidate>
       <h2>Trip erstellen</h2>
 
       <mat-form-field>
         <mat-label>Start</mat-label>
-        <mat-select formControlName="start" [(value)]="tripDto.startStation">
+        <mat-select [(value)]="tripDto.startStation" formControlName="start">
           <mat-option *ngFor="let start of info.stations" [value]="start">
             {{start}}
           </mat-option>
@@ -14,7 +14,7 @@
       <br>
       <mat-form-field>
         <mat-label>Ende</mat-label>
-        <mat-select formControlName="end" [(value)]="tripDto.endStation">
+        <mat-select [(value)]="tripDto.endStation" formControlName="end">
           <mat-option *ngFor="let end of info.stations" [value]="end">
             {{end}}
           </mat-option>
@@ -24,7 +24,7 @@
 
       <mat-form-field>
         <mat-label>Kapazität</mat-label>
-        <mat-select formControlName="capacity" [(value)]="tripDto.capacity">
+        <mat-select [(value)]="tripDto.capacity" formControlName="capacity">
           <mat-option *ngFor="let cap of info.capacities" [value]="cap">
             {{cap}}
           </mat-option>
@@ -34,13 +34,13 @@
 
       <mat-label>
         Abfahrtszeit:<br>
-        <input formControlName="time" [(ngModel)]="tripDto.time" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+        <input [(ngModel)]="tripDto.time" [owlDateTimeTrigger]="dt" [owlDateTime]="dt" formControlName="time">
         <owl-date-time #dt></owl-date-time>
       </mat-label>
       <br>
 
-      <button mat-button type="submit" name="submit" [disabled]="!group.valid || !isValid()">Speichern</button>
-      <button mat-button (click)="this.dialog.closeAll()">Schliessen</button>
+      <button [disabled]="!group.valid || !isValid()" mat-button name="submit" type="submit">Speichern</button>
+      <button (click)="this.dialog.closeAll()" mat-button>Schliessen</button>
     </form>
   </div>
 </mat-card>

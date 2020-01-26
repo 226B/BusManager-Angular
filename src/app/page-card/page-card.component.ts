@@ -11,7 +11,8 @@ export class PageCardComponent implements OnInit {
   @Input() description = '';
 
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

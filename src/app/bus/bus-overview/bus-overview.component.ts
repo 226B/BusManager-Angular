@@ -9,9 +9,10 @@ import {BusListComponent} from '../bus-list/bus-list.component';
   styleUrls: ['./bus-overview.component.css', '../../../_styles/overview.css']
 })
 export class BusOverviewComponent implements OnInit {
-  constructor(private dialog: MatDialog) { }
-
   @ViewChild(BusListComponent) list: BusListComponent;
+
+  constructor(private dialog: MatDialog) {
+  }
 
   openDialog() {
 

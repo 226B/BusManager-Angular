@@ -15,7 +15,7 @@ export class TimetableService {
     return this.httpClient.get<Trip[]>('http://localhost:8080/api/v1/trip/get');
   }
 
-  public addTrip(createTripDto: CreateTripDto): Observable<Trip> {
+  public(createTripDto: CreateTripDto): Observable<Trip> {
     return this.httpClient.post<Trip>('http://localhost:8080/api/v1/trip/add', createTripDto);
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'bm-base-content-overview',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseContentOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

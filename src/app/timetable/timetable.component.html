@@ -1,46 +1,46 @@
 <h2>Fahrtplan</h2>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort multiTemplateDataRows>
-  <!-- Name Column -->
+<table [dataSource]="dataSource" class="mat-elevation-z8" mat-table matSort multiTemplateDataRows>
+  <!-- Start Column -->
   <ng-container matColumnDef="startLocationName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Start</th>
-    <td mat-cell *matCellDef="let element">
+    <th *matHeaderCellDef mat-header-cell mat-sort-header> Start</th>
+    <td *matCellDef="let element" mat-cell>
       {{element.startLocationName}}
     </td>
   </ng-container>
 
-  <!-- Capacity Column -->
+  <!-- Ende Column -->
   <ng-container matColumnDef="arrivalLocationName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ende</th>
-    <td mat-cell *matCellDef="let element"> {{element.arrivalLocationName}} </td>
+    <th *matHeaderCellDef mat-header-cell mat-sort-header> Ende</th>
+    <td *matCellDef="let element" mat-cell> {{element.arrivalLocationName}} </td>
   </ng-container>
 
-  <!-- recoveryTime Column -->
+  <!-- abfahrtszeit Column -->
   <ng-container matColumnDef="startTime">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> abfahrtszeit</th>
-    <td mat-cell *matCellDef="let element"> {{element.startTime}} </td>
+    <th *matHeaderCellDef mat-header-cell mat-sort-header> abfahrtszeit</th>
+    <td *matCellDef="let element" mat-cell> {{element.startTime | date: 'dd.MM.yyyy HH.mm.ss'}} </td>
   </ng-container>
-  <!-- recoveryTime Column -->
+  <!-- ankunftszeit Column -->
   <ng-container matColumnDef="arrivalTime">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> ankunftszeit </th>
-    <td mat-cell *matCellDef="let element"> {{element.arrivalTime}} </td>
+    <th *matHeaderCellDef mat-header-cell mat-sort-header> ankunftszeit</th>
+    <td *matCellDef="let element" mat-cell> {{element.arrivalTime | date: 'dd.MM.yyyy HH.mm.ss'}} </td>
   </ng-container>
 
-  <!-- maxRange Column -->
+  <!-- Startstation Column -->
   <ng-container matColumnDef="startTerminal">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Startstation</th>
-    <td mat-cell *matCellDef="let element"> {{element.startTerminal}} </td>
+    <th *matHeaderCellDef mat-header-cell mat-sort-header> Startstation</th>
+    <td *matCellDef="let element" mat-cell> {{element.startTerminal}} </td>
   </ng-container>
-  <!-- maxRange Column -->
+  <!-- Ankunftsstation Column -->
   <ng-container matColumnDef="arrivalTerminal">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ankunftsstation</th>
-    <td mat-cell *matCellDef="let element"> {{element.arrivalTerminal}} </td>
+    <th *matHeaderCellDef mat-header-cell mat-sort-header> Ankunftsstation</th>
+    <td *matCellDef="let element" mat-cell> {{element.arrivalTerminal}} </td>
   </ng-container>
 
-  <!-- distancePerH Column -->
+  <!-- Bustype Column -->
   <ng-container matColumnDef="busType">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Bustype</th>
-    <td mat-cell *matCellDef="let element"> {{element.busType}}</td>
+    <th *matHeaderCellDef mat-header-cell mat-sort-header> Bustype</th>
+    <td *matCellDef="let element" mat-cell> {{element.busType}}</td>
   </ng-container>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
 </table>

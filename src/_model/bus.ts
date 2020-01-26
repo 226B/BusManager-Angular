@@ -1,14 +1,20 @@
 export class Bus {
-  constructor() {
-    this.type = new BusType();
-  }
-
   name: string;
   type: BusType;
   station: string;
+
+  constructor() {
+    this.type = new BusType();
+  }
 }
 
 export class BusType {
+  name: string;
+  capacity: number;
+  recoveryTime: number;
+  maxRange: number;
+  distancePerH: number;
+
   constructor() {
     this.name = '';
     this.capacity = null;
@@ -16,12 +22,6 @@ export class BusType {
     this.maxRange = null;
     this.distancePerH = null;
   }
-
-  name: string;
-  capacity: number;
-  recoveryTime: number;
-  maxRange: number;
-  distancePerH: number;
 }
 
 export class Stations {

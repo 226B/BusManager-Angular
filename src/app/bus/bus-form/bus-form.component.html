@@ -1,8 +1,8 @@
 <mat-card>
-  <form [formGroup]="group" name="form" novalidate (ngSubmit)="saveEntry(f)" #f="ngForm">
+  <form #f="ngForm" (ngSubmit)="saveEntry(f)" [formGroup]="group" name="form" novalidate>
     <h2>Bus erstellen</h2>
     <mat-form-field>
-      <input id="name" matInput placeholder="Name" formControlName="name" required [(ngModel)]="bus.name">
+      <input [(ngModel)]="bus.name" formControlName="name" id="name" matInput placeholder="Name" required>
       <mat-error *ngIf="group.controls.name.invalid  && (group.controls.name.dirty || group.controls.name.touched)">
         {{getTextError(group.controls.name)}}
       </mat-error>
@@ -11,7 +11,7 @@
 
     <mat-form-field>
       <mat-label>BusType</mat-label>
-      <mat-select formControlName="type" required [(ngModel)]="bus.type.name">
+      <mat-select [(ngModel)]="bus.type.name" formControlName="type" required>
         <mat-option>--</mat-option>
         <mat-option *ngFor="let type of typeNames" [value]="type">
           {{type}}
@@ -24,7 +24,7 @@
     <br>
     <mat-form-field>
       <mat-label>Stationen</mat-label>
-      <mat-select formControlName="station" required [(ngModel)]="bus.station">
+      <mat-select [(ngModel)]="bus.station" formControlName="station" required>
         <mat-option *ngFor="let type of stations" [value]="type">
           {{type}}
         </mat-option>
@@ -41,7 +41,7 @@
     <p *ngIf="!error">
       {{message}}
     </p>
-    <button mat-button type="submit" name="submit" [disabled]="!group.valid">Speichern</button>
-    <button mat-button (click)="this.dialog.closeAll()">Schliessen</button>
+    <button [disabled]="!group.valid" mat-button name="submit" type="submit">Speichern</button>
+    <button (click)="this.dialog.closeAll()" mat-button>Schliessen</button>
   </form>
 </mat-card>

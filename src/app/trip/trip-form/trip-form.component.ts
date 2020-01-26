@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {TimetableService} from '../../../_services/timetable.service';
 import {CreateTripDto, TripInfo} from '../../../_model/trip';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'bm-trip-form',
@@ -18,10 +17,11 @@ export class TripFormComponent implements OnInit {
   group = new FormGroup({
     start: new FormControl(''),
     end: new FormControl(''),
-    capacity: new FormControl('', ),
+    capacity: new FormControl('',),
     time: new FormControl('')
   }, Validators.required);
   tripDto = new CreateTripDto();
+
   constructor(private service: TimetableService, private dialog: MatDialog) {
   }
 
@@ -51,7 +51,7 @@ export class TripFormComponent implements OnInit {
       this.tripDto.time == null ||
       this.tripDto.startStation == null ||
       this.tripDto.endStation == null ||
-      this.tripDto.time < new Date(Date.now())  ||
+      this.tripDto.time < new Date(Date.now()) ||
       !this.info.capacities.includes(this.tripDto.capacity) ||
       !this.info.stations.includes(this.tripDto.startStation) ||
       !this.info.stations.includes(this.tripDto.endStation)

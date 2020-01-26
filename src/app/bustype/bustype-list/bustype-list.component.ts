@@ -10,8 +10,8 @@ import {BusService} from '../../../_services/bus.service';
   styleUrls: ['./bustype-list.component.css', '../../../_styles/expandable-table-style.css'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed, void', style({ height: '0px', minHeight: '0', display: 'none' })),
-      state('expanded', style({ height: '*' })),
+      state('collapsed, void', style({height: '0px', minHeight: '0', display: 'none'})),
+      state('expanded', style({height: '*'})),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
       transition('expanded <=> void', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
     ])
@@ -19,10 +19,12 @@ import {BusService} from '../../../_services/bus.service';
 })
 export class BustypeListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'capacity', 'recoveryTime', 'maxRange', 'distancePerH'];
-  private dataSource: MatTableDataSource<BusType>;
   expandedElement: BusType | null;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private busService: BusService) { }
+  private dataSource: MatTableDataSource<BusType>;
+
+  constructor(private busService: BusService) {
+  }
 
   ngOnInit() {
     this.reload();

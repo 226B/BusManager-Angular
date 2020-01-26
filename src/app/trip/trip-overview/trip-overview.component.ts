@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {TripFormComponent} from '../trip-form/trip-form.component';
 
@@ -9,7 +9,8 @@ import {TripFormComponent} from '../trip-form/trip-form.component';
 })
 export class TripOverviewComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) {
+  }
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();

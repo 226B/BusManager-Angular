@@ -21,7 +21,9 @@ export class TimetableComponent implements OnInit {
     'busType'
   ];
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private service: TimetableService) { }
+
+  constructor(private service: TimetableService) {
+  }
 
   ngOnInit() {
     this.reload();

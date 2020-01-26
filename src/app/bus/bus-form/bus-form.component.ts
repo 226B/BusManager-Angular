@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {BusService} from '../../../_services/bus.service';
 import {Bus} from '../../../_model/bus';
@@ -23,11 +23,12 @@ export class BusFormComponent implements OnInit {
   typeNames = [];
   stations: string[];
 
+  constructor(private service: BusService, private dialog: MatDialog) {
+    this.emit = false;
+  }
+
   getTextError(form: AbstractControl) {
     return form.hasError('required') ? 'Bitte wählen sie einen Wert aus.' : '';
-  }
-  constructor(private service: BusService,  private dialog: MatDialog) {
-    this.emit = false;
   }
 
   ngOnInit() {

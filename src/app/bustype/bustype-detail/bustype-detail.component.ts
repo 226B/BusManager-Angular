@@ -9,7 +9,8 @@ import {BusType} from '../../../_model/bus';
 export class BustypeDetailComponent implements OnInit {
   @Input() private busType: BusType;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
   }

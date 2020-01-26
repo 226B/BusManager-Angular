@@ -21,16 +21,17 @@ export class BustypeFormComponent implements OnInit {
   }, Validators.required);
   busType = new BusType();
 
+  constructor(private service: BusService, private dialog: MatDialog) {
+  }
+
   getTextError(form: AbstractControl) {
     return form.hasError('required') ? 'Bitte geben sie einen Wert ein.' : '';
   }
+
   getNumberError(form: AbstractControl) {
     return form.hasError('required') ? 'Bitte geben sie einen Wert ein.' :
       form.hasError('min') ? 'Die Zahl muss grösser als 0 sein.' :
         '';
-  }
-
-  constructor(private service: BusService, private dialog: MatDialog) {
   }
 
   ngOnInit() {

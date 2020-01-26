@@ -1,10 +1,10 @@
-<mat-drawer-container class="example-container" autosize>
+<mat-drawer-container autosize class="example-container">
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <nav>
       <mat-toolbar>
         <mat-toolbar-row>
           <div class="example-sidenav-content">
-            <button type="button" mat-button (click)="drawer.toggle()">
+            <button (click)="drawer.toggle()" mat-button type="button">
               Navigation
             </button>
           </div>
@@ -23,8 +23,8 @@
     </nav>
   </mat-drawer>
 
-  <div class="sidenav-button" *ngIf="!drawer.opened">
-    <button type="button" mat-button (click)="drawer.toggle()">
+  <div *ngIf="!drawer.opened" class="sidenav-button">
+    <button (click)="drawer.toggle()" mat-button type="button">
       Navigation
     </button>
   </div>

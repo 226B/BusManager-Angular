@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {BusFormComponent} from '../../bus/bus-form/bus-form.component';
+import {MatDialog} from '@angular/material/dialog';
 import {BustypeListComponent} from '../bustype-list/bustype-list.component';
 import {BustypeFormComponent} from '../bustype-form/bustype-form.component';
 
@@ -11,10 +10,10 @@ import {BustypeFormComponent} from '../bustype-form/bustype-form.component';
 })
 export class BustypeOverviewComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
-
   @ViewChild(BustypeListComponent) list: BustypeListComponent;
 
+  constructor(private dialog: MatDialog) {
+  }
 
   openDialog() {
     const dial = this.dialog.open(BustypeFormComponent, {
@@ -29,6 +28,7 @@ export class BustypeOverviewComponent implements OnInit {
       this.list.reload();
     });
   }
+
   ngOnInit() {
   }
 

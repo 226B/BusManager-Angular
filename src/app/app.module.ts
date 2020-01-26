@@ -22,16 +22,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSortModule} from '@angular/material/sort';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { PageCardComponent } from './page-card/page-card.component';
+import {PageCardComponent} from './page-card/page-card.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogConfig, MatDialogModule} from '@angular/material/dialog';
-import { TripOverviewComponent } from './trip/trip-overview/trip-overview.component';
-import { TripFormComponent } from './trip/trip-form/trip-form.component';
-import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
-
+import {TripOverviewComponent} from './trip/trip-overview/trip-overview.component';
+import {TripFormComponent} from './trip/trip-form/trip-form.component';
+import {DlDateTimeDateModule, DlDateTimePickerModule} from 'angular-bootstrap-datetimepicker';
+import {OwlDateTimeModule, OwlNativeDateTimeModule} from 'ng-pick-datetime';
 
 
 @NgModule({
